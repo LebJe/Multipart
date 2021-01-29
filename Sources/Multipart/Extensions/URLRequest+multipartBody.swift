@@ -1,5 +1,6 @@
 import Foundation
 
+#if !os(Linux)
 extension URLRequest {
     /// Set multipart MIME data as the message body of the request, such as for an HTTP POST request.
     /// - Parameter multipart: the multipart MIME body to send
@@ -10,3 +11,4 @@ extension URLRequest {
         self.httpBody = multipart.body
     }
 }
+#endif
